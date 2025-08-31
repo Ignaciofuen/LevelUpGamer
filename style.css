@@ -91,7 +91,7 @@ header h1{
     margin: 2rem auto;
     text-align: center;
     display: flex;
-    justify-content: center; /* centra horizontal */
+    justify-content: center; 
     align-items: center;
 
 }
@@ -288,6 +288,18 @@ section form button:hover{
     
 }
 
+.card .btn{
+    margin-top: 1rem;
+    background-color:#39FF14;
+
+}
+
+.card .btn:hover{
+    transition: box-shadow 0.3s ease;
+    box-shadow: 0 0.2rem 0.6rem #14ff4b;
+
+}
+
 /* Nueva clase para tarjetas más grandes , productos */
 
 .card2{
@@ -324,6 +336,11 @@ section form button:hover{
 
 }
 
+.card2 .btn:hover{
+    transition: box-shadow 0.3s ease;
+    box-shadow: 0 0.2rem 0.6rem #14ff4b;
+
+}
 
 /* Contenedor del carrito */
 #carritoBtn {
@@ -333,19 +350,23 @@ section form button:hover{
 
 /* Dropdown del carrito */
 #dropdownCarrito {
-    display: none; /* Se muestra con JS */
+    display: none; 
     position: absolute;
-    top: 100%; /* Debajo del botón */
+    top: 100%; 
     right: 0;
     background-color: #fff;
     border: 1px solid #ccc;
     border-radius: 8px;
     width: 280px;
     max-height: 300px;
-    overflow-y: auto; /* Scroll si hay muchos productos */
+    overflow-y: auto; 
     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
     z-index: 1000;
     padding: 10px;
+}
+
+#dropdownCarrito.mostrar-carrito {
+    display: block;
 }
 
 /* Lista de productos */
@@ -355,7 +376,7 @@ section form button:hover{
     margin: 0;
 }
 
-/* Item del carrito */
+
 #dropdownCarrito li {
     display: flex;
     justify-content: space-between;
@@ -365,12 +386,12 @@ section form button:hover{
     font-size: 14px;
 }
 
-/* Último item sin borde */
+
 #dropdownCarrito li:last-child {
     border-bottom: none;
 }
 
-/* Botón eliminar producto */
+
 #dropdownCarrito li button {
     background-color: #dc3545;
     border: none;
@@ -381,7 +402,7 @@ section form button:hover{
     font-size: 12px;
 }
 
-/* Hover sobre botón eliminar */
+
 #dropdownCarrito li button:hover {
     background-color: #c82333;
 }
@@ -394,7 +415,7 @@ section form button:hover{
     font-size: 16px;
 }
 
-/* Animación al mostrar dropdown */
+
 #dropdownCarrito.show {
     display: block;
     animation: fadeIn 0.2s ease-in-out;
@@ -425,14 +446,14 @@ h1 {
     padding-bottom: 10px;
 }
 
-/* Flexbox for the main cart layout */
+/* detalle producto*/
 .cart-content {
     display: flex;
     gap: 40px;
 }
 
 .product-list {
-    flex: 2; /* Takes up more space */
+    flex: 2; 
     display: flex;
     flex-direction: column;
     gap: 15px;
@@ -453,7 +474,7 @@ h1 {
 }
 
 .product-details {
-    flex-grow: 1; /* Takes up remaining space */
+    flex-grow: 1; 
 }
 
 .product-name {
@@ -484,9 +505,9 @@ h1 {
     cursor: pointer;
 }
 
-/* Cart Summary Section */
+/*Summary Section */
 .cart-summary {
-    flex: 1; /* Takes up less space */
+    flex: 1; 
     border: 1px solid #ccc;
     padding: 15px;
     display: flex;
@@ -538,7 +559,7 @@ h1 {
     background-color: #28a745;
     color: white;
     font-size: 1.1rem;
-    margin-top: auto; /* Pushes the button to the bottom */
+    margin-top: auto; 
 }
 
 
@@ -551,7 +572,7 @@ product-page-container {
     margin: 0 auto;
 }
 
-/* Breadcrumb */
+
 .breadcrumb {
     font-size: 0.9em;
     color: #555;
@@ -576,21 +597,21 @@ product-page-container {
 
 .image-gallery {
     display: flex;
-    flex-direction: column; /* Apila los elementos verticalmente */
+    flex-direction: column; 
     align-items: center;    
     gap: 10px;
 }
 
 .main-image {
-    width: 100%; /* Ocupa todo el ancho disponible en su contenedor padre */
-    max-width: 500px; /* Tamaño máximo para la imagen principal */
-    height: 350px; /* Altura fija para la imagen principal */
-    border: 1px solid #ddd; /* Borde sutil para el contenedor */
+    width: 100%; 
+    max-width: 500px; 
+    height: 350px; 
+    border: 1px solid #ddd; 
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden; /* Asegura que la imagen no se desborde */
-    background-color: #f9f9f9; /* Fondo claro si la imagen no llena todo */
+    overflow: hidden; 
+    background-color: #f9f9f9; 
 }
 
 
@@ -666,7 +687,7 @@ product-page-container {
 .thumbnails {
     display: flex;
     gap: 10px;
-    margin-top: 10px; /* Espacio entre imagen principal y miniaturas */
+    margin-top: 10px; 
 }
 
 .thumbnail {
@@ -674,7 +695,7 @@ product-page-container {
     height: 80px;
     border: 1px solid #ccc;
     cursor: pointer;
-    overflow: hidden; /* Para asegurar que la imagen no se salga */
+    overflow: hidden; 
     display: flex;
     justify-content: center;
     align-items: center;
@@ -683,16 +704,88 @@ product-page-container {
 .thumbnail img.thumbnail-image {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Las miniaturas se rellenan */
-    transition: transform 0.2s ease; /* Pequeña animación al pasar el ratón */
+    object-fit: cover; 
+    transition: transform 0.2s ease; 
 }
 
 .thumbnail:hover img.thumbnail-image {
-    transform: scale(1.05); /* Zoom ligero al pasar el ratón */
+    transform: scale(1.05); 
 }
 
-/* Estilo para la miniatura activa */
+
 .thumbnail.active-thumbnail {
-    border-color: #007bff; /* Color de borde para la miniatura seleccionada */
+    border-color: #007bff; 
     box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+
+
+
+
+/* Estilos para el contenedor de la cuadrícula de productos relacionados */
+.related-products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px; 
+    padding: 20px 0;
+}
+
+
+.related-product-card {
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+}
+
+
+.related-product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+/* Estilos para la imagen dentro de la tarjeta */
+.related-product-card .thumbnail-image {
+    width: 100%; 
+    height: 150px; 
+    object-fit: contain; /* Ajusta la imagen dentro de su espacio sin distorsionarla */
+    padding: 10px; 
+    background-color: #fff; 
+}
+
+/* Estilos para la información del producto */
+.related-product-card .product-info {
+    padding: 10px;
+    text-decoration: none; 
+    color: inherit; 
+}
+
+.related-product-card .product-name {
+    font-size: 1rem;
+    font-weight: bold;
+    margin: 0;
+    white-space: nowrap; 
+    overflow: hidden; 
+    text-overflow: ellipsis; 
+}
+
+.related-product-card .product-price {
+    font-size: 0.9rem;
+    color: #555;
+    margin-top: 5px;
+}
+
+
+
+.related-product-link {
+    text-decoration: none;
+    color: inherit; 
+    display: block; 
+}
+
+.related-product-link:hover {
+    text-decoration: none; 
 }

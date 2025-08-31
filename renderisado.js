@@ -1,42 +1,27 @@
-// En tu archivo carrito.js
 
-function renderizarProductosEnElCarrito() {
-    const productList = document.querySelector('.product-list');
-    const totalAmount = document.querySelector('.total-amount');
-    let total = 0;
+function mostrarProductosRelacionados(productos, productoActualId) {
+    const grid = document.querySelector('.related-products-grid');
+    if (!grid) {
+        return;
+    }
 
-    // Limpia la lista antes de renderizar para evitar duplicados
-    productList.innerHTML = '';
+    const productosFiltrados = productos.filter(p => p.id !== productoActualId);
+    const productosAleatorios = productosFiltrados.sort(() => 0.5 - Math.random()).slice(0, 4);
 
-    carrito.forEach(producto => {
-        const itemHTML = `
-            <div class="product-item" data-id="${producto.id}">
-                <div class="product-image">
-                    <img src="${producto.imagen}" alt="${producto.nombre}" style="width: 100%; height: auto;">
-                </div>
-                <div class="product-details">
-                    <p class="product-name">${producto.nombre}</p>
-                    <p class="product-description">${producto.descripcion}</p>
-                </div>
-                <div class="product-price">$${(producto.precio * producto.cantidad).toLocaleString('es-ES')}</div>
-                <div class="product-quantity-controls">
-                    <button class="restar">-</button>
-                    <span>${producto.cantidad}</span>
-                    <button class="sumar">+</button>
-                </div>
-                <button class="eliminar">Eliminar</button>
+    grid.innerHTML = '';
+
+    productosAleatorios.forEach(producto => {
+        const productCardHTML = `
+            <div class="related-product-card">
+                <a href="detalle.html?id=${producto.id}" class="related-product-link">
+                    <img class="thumbnail-image" src="${producto.imagen}" alt="${producto.nombre}">
+                    <div class="product-info">
+                        <p class="product-name">${producto.nombre}</p>
+                        <p class="product-price">$${producto.precio.toLocaleString('es-ES')}</p>
+                    </div>
+                </a>
             </div>
         `;
-        productList.innerHTML += itemHTML;
-        total += producto.precio * producto.cantidad;
+        grid.innerHTML += productCardHTML;
     });
-
-    totalAmount.textContent = `$${total.toLocaleString('es-ES')}`;
 }
-
-// Llama a esta función cuando la página del carrito se cargue
-document.addEventListener('DOMContentLoaded', () => {
-    // Asegúrate de cargar el carrito desde localStorage primero
-    cargarCarritoDeLocalStorage(); 
-    renderizarProductosEnElCarrito();
-});

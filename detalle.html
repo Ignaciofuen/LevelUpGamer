@@ -47,7 +47,7 @@
                         🛒 Carrito (<span id="cantidadCarrito">0</span>)
                         
                     </button>
-                    <div id="dropdownCarrito" class="dropdown-menu p-3" style="display:none; right:0; min-width:250px;">
+                    <div id="dropdownCarrito" class="dropdown-menu p-3" style="right:0; min-width:250px;">
                         <ul id="carrito" style="list-style:none; padding:0; margin:0;"></ul>
                         <p>Total: $<span id="total">0</span></p>
                     </div>
@@ -63,82 +63,46 @@
     </header>
 
 
-    <section class="detalle">
+        <section class="detalle">
         <div class="product-page-container">
             <div class="breadcrumb">
                 <a href="#">Inicio</a> &gt;
                 <a href="#">Categoría X</a> &gt;
-                <a href="#">Nombre Producto</a>
+                <span id="productNameBreadcrumb"></span>
             </div>
 
             <div class="main-product-content">
                 <div class="image-gallery">
                     <div class="main-image">
-                        <img id="mainProductImage" src="assets/img/[20260] TECLADO2 REDRAGON K530W DRACONIC BLC.png" alt="Teclado Principal">
+                        <img id="mainProductImage" src="" alt="">
                     </div>
-                    <div class="thumbnails">
-                        <div class="thumbnail active-thumbnail">
-                            <img class="thumbnail-image" src="assets/img/[20260] TECLADO2 REDRAGON K530W DRACONIC BLC.png" 
-                                data-full-image="assets/img/[20260] TECLADO2 REDRAGON K530W DRACONIC BLC.png" alt="Miniatura 1">
-                        </div>
-                        <div class="thumbnail">
-                            <img class="thumbnail-image" src="assets/img/tecladob1.webp" 
-                                data-full-image="assets/img/tecladob1.webp" alt="Miniatura 2">
-                        </div>
-                        <div class="thumbnail">
-                            <img class="thumbnail-image" src="assets/img/tecladob2.webp" 
-                                data-full-image="assets/img/tecladob2.webp" alt="Miniatura 3">
-                        </div>
-                        </div>
+                    <div class="thumbnails" id="productThumbnails">
+                    </div>
                 </div>
 
                 <div class="product-details">
-                    <h1 class="product-name">TECLADO REDRAGON K530W DRACONIC BLC</h1>
-                    <span class="product-price">$62,350</span>
-                    <h4>Diseño minimalista, compacto y eficaz. Para quienes buscan una estética distinta.</h4>
+                    <h1 id="product-name"></h1>
+                    <span id="product-price"></span>
+                    <p id="product-description"></p>
                     
                     <div class="quantity-selector">
                         <label for="quantity">Cantidad:</label>
                         <input type="number" id="quantity" value="1" min="1">
                     </div>
                     <button id="addToCartBtn" class="add-to-cart-btn">Agregar al carrito</button>
-
-                    <h5>Easpesificaciones Tecnicas</h5>
-                    <p>Tipo Teclado: Mecánicos
-                        Tipo Switch: Outemu Brown táctil sin click audible, 45g fuerza de actuación</p>
-                    <p>Teclas Multimedia: No</p>
-                    <p>Teclas Macro Dedicadas: No, a través de tecla FN</p>
-                    <p>Bloqueo Tecla Windows: Si</p>
-                    <p>Tamaño teclado: Compacto 60%</p>
-                    <p>Retroiluminado: Sí, RGB Chroma</p>
-                    <p>Cable: USB Type-C desmontable, Bluetooth 5.0</p>
-                    <p>Matriz: 61 teclas full rollover</p>
-                    <p>Anti salpicaduras: Sí</p>
-                    <p>Distribución: Inglés</p> 
-                    <p>Software: Si</p>
-                    <p class="product-description">
-                        
-                    </p>
                     
-                
+                    <h5>Especifaciones Tecnicas</h5>
+                    <div id="tech-specs"></div>
                 </div>
             </div>
 
             <div class="related-products-section">
                 <h2>Productos Relacionados</h2>
                 <div class="related-products-grid">
-                    <div class="related-product-card"></div>
-                    <div class="related-product-card"></div>
-                    <div class="related-product-card"></div>
-                    <div class="related-product-card"></div>
-                    <div class="related-product-card"></div>
                 </div>
             </div>
         </div>
     </section>
-
-
-
 
 
 
@@ -161,7 +125,8 @@
     <script src="botncarro.js"></script>
     <script src="productos.js"></script>
     <script src="cambio.js"></script>
-
+    <script src="relacionados.js"></script>
+    
 
 
 
