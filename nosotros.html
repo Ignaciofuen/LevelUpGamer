@@ -1,12 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nosotros</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
-    <title>nosotros</title>
-    <link rel = "stylesheet" href="style.css">
+    <link rel="stylesheet" href="style2.css">
 </head>
 <body>
     <header id="titulo">
@@ -23,52 +21,102 @@
                 <a class="nav-link active" aria-current="page" href="index.html">Home</a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link" href="nosotros.html" target="_blank">nosotros</a>
+                <a class="nav-link" href="nosotros.html" target="_self">Nosotros</a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link" href="producto.html" target="_blanck">Productos</a>
+                <a class="nav-link" href="contacto.html" target="_self">Contacto</a>
                 </li>
+                <li class="nav-item">
+                <a class="nav-link" href="productos.html" target="_self">Productos</a>
+                </li>
+
+
+                
             </ul>
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Usuario
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                    <li><a class="dropdown-item" href="#">Iniciar sesión</a></li>
+                    <li><a class="dropdown-item" href="#">Registrarse</a></li>
+                    </ul>
+                </div>
+                                
+                <div class="d-flex position-relative">
+                    <button id="carritoBtn" class="btn btn-outline-primary" href="carrito.html">
+                        🛒 Carrito (<span id="cantidadCarrito">0</span>)
+                        
+                    </button>
+                    <div id="dropdownCarrito" class="dropdown-menu p-3" style="right:0; min-width:250px;">
+                        <ul id="carrito" style="list-style:none; padding:0; margin:0;"></ul>
+                        <p>Total: $<span id="total">0</span></p>
+                    </div>
+                    
+                </div>
+
+            
             </div>
+            
         </div>
         </nav>
-    <main class ="contenido">   
-        <section>  
-            <h3>formulario de contacto</h3>
-            <p>
-                dejanos y nos pondremos en contacto contigo
-            </p>
-            <form class="form-contacto" action="#" method="post"> 
-                <label for="nombre">nombre</label>
-                <input type="text" id="nombre" name="nombre" placeholder="ingrese su nombre" required>
-                <label for = "correo">correo</label>
-                <input type="email" id="correo" name="correo" placeholder="required">
-                <label for="asunto">mascota</label>
-                <select class="form-select" aria-label="Default select example">
-                <option selected>tipo de mascota</option>
-                <option value="1">perro</option>
-                <option value="2">gato</option>
-                <option value="3">otro</option>
-                </select>                
-                <label for="mensaje">mensaje</label>                
-                <textarea name="mensaje" id="mensaje" rows="5" placeholder="escribe tu mensaje">mensaje</textarea>
 
-                <button type = "reset">limpiar</button>
-                <button type="submit"> enviar</button>
-            </form>
+    </header>
+    <section class ="nosotros">
+        <article>
+            <header class="container header-cont d-flex flex-column flex-md-row align-items-center justify-content-center">
+                <div>
+                    <h1>Bienvenido a Level Up Gamer</h1>
+                    <p>Level-Up Gamer es una tienda online dedicada a satisfacer las necesidades de los entusiastas de los videojuegos en Chile. Nacida hace dos años como respuesta a la creciente demanda durante la pandemia, ofrece una amplia gama de productos que incluyen consolas, accesorios, computadores y sillas especializadas, con despacho a todo el país. Nuestra misión es proporcionar artículos de alta calidad y una experiencia de compra única y personalizada, siempre con el foco puesto en la satisfacción del cliente y en el fortalecimiento de la comunidad gamer. Aspiramos a convertirnos en la tienda online líder en Chile, reconocida por nuestra innovación, un servicio al cliente excepcional y un programa de fidelización basado en la gamificación que premie a nuestros clientes más fieles</p>
 
-        </section>
-    
-    </main>
+                </div>
+            </header>
+
+        </article>
+    </section>
+    <section class="caso-curioso">
+        <div class="caso-curioso__contenido">
+            <h2>La importancia de la comunidad gamer en Chile</h2>
+            <p>Más allá de los videojuegos, ser gamer significa formar parte de una comunidad que comparte pasiones, logros y experiencias. En Level-Up Gamer estamos convencidos de que fortalecer la comunidad gamer en Chile es clave para impulsar la cultura digital y fomentar espacios de inclusión y amistad. A través de nuestras redes y programas de fidelización, buscamos crear un espacio donde cada jugador pueda sentirse parte de algo más grande que un simple juego: una verdadera comunidad.</p>
+
+        </div>
+        <div class="caso-curioso__imagen">
+            <img class="caso-curioso__img-adapt" src="assets/img/lolcito.png" alt="">
+        </div>
+    </section>
+    <section class="caso-curioso">
+        <div class="caso-curioso__contenido">
+            <h2>Cómo elegir tu primera consola en 2025</h2>
+            <p>En Level-Up Gamer sabemos que elegir tu primera consola puede ser emocionante, pero también un poco confuso con tantas opciones en el mercado. PlayStation, Xbox y Nintendo ofrecen experiencias únicas: desde gráficos de última generación hasta juegos exclusivos que marcan la diferencia. Nuestro objetivo es ayudarte a encontrar la consola que mejor se adapte a tu estilo de juego, tu presupuesto y la experiencia que buscas. En nuestra tienda encontrarás comparativas, accesorios compatibles y la asesoría necesaria para que tu primera compra gamer sea un acierto seguro.</p>
+        </div>
+        <div class="caso-curioso__imagen">
+            <img class="caso-curioso__img-adapt" src="assets/img/BannerBlog_CONSOLAS_EVOLUCION.webp" alt="Evolución consolas">
+        </div>
+    </section>
+    <section class="ubicacion-local" style="margin: 60px auto 40px auto; max-width: 1100px; background: #0E1A2B; border-radius: 10px; padding: 32px 24px; color: #fff; display: flex; flex-wrap: wrap; gap: 32px; align-items: flex-start;">
+        <div style="flex:1; min-width: 260px;">
+            <h2 style="font-size: 2rem; margin-bottom: 12px; color: #fff;">¿Dónde estamos?</h2>
+            <p style="font-size: 1.1rem; margin-bottom: 10px;">Nuestro local está ubicado en <strong>Av. Providencia 1234, Santiago, Chile</strong>, a pasos del Metro Los Leones. Ven a visitarnos para conocer todos nuestros productos y recibir asesoría personalizada de nuestro equipo gamer.</p>
+        </div>
+        <div style="flex:1; min-width: 320px; max-width: 500px;">
+            <iframe style="width:100%; height:260px; border-radius:8px; border:0;" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3330.646393857839!2d-70.6106036848006!3d-33.4199999807826!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662cf3e2b2e2e2b%3A0x7e2e2e2e2e2e2e2e!2sAv.%20Providencia%201234%2C%20Providencia%2C%20Regi%C3%B3n%20Metropolitana%2C%20Chile!5e0!3m2!1ses-419!2scl!4v1693770000000!5m2!1ses-419!2scl"></iframe>
+        </div>
+    </section>
+
 
     <footer>
         <section>
         <a href="#titulo">Volver al inicio</a>
         </section>
-        <p>PetZone © 2025 </p>
+        <p>Level Up Gamer © 2025 </p>
         <p>Todos los derechos reservados</p>
     </footer>
 
+    <script src="botncarro.js"></script>
+    
+    <script src="cambio.js"></script>
+    <script src="productos.js"></script>
 
 
 </body>
