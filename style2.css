@@ -95,6 +95,10 @@ header h1{
     align-items: center;
 
 }
+.container .card h2{
+    color: gray;
+    
+}
 
 .logo img {
   width: 200px;          
@@ -119,7 +123,7 @@ section article h2,section article p{
     margin: 1rem;
     font-size: 1.5rem;
     margin: 0.5rem;
-    color: #9c9d6d;
+    color: #d6d6c3;
     text-align: center;
 }
 
@@ -267,7 +271,7 @@ section form button:hover{
 
 
 .card h5, .card p{
-    color: #9c9d6d;
+    color: #d7d7cb;
 }
 
 
@@ -991,3 +995,10 @@ section.nosotros h1, section.nosotros p, section.nosotros .title-span {
     background-color: #4da3a0;
     
 }
+
+
+
+
+
+
+

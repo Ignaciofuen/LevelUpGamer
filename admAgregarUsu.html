@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Level-Up-Gamer</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style3.css">
+</head>
+<body>
+  
+    <title>Listado de Productos</title>
+    
+
+</head>
+<body>
+
+    <header id="titulo">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+                    <a class="navbar-brand" href="#">Panel de Administrador</a>
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="adminHome.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="GestionProductos.html">Listado de productos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="GestionUsuarios.html">Listado de usuarios</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="agregar-usuario.html">Reportes y estadística</a>
+                        </li>
+
+                       
+                        
+                    </ul>
+                    <div class="d-flex align-items-center">
+                        <span id="saludoUsuario" class="me-3 text-dark"></span>
+                        <button id="botonCerrarSesion" class="btn btn-danger">Cerrar Sesión</button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="card p-4 shadow-lg" style="min-width: 600px;">
+        <h2 class="text-center mb-4">Agregar Nuevo Usuario</h2>
+
+        <form id="form-agregar-usuario">
+        <input class="form-control mb-2" placeholder="RUN" id="add-run" required>
+        <input class="form-control mb-2" placeholder="Nombre" id="add-nombre" required>
+        <input class="form-control mb-2" placeholder="Apellido" id="add-apellido" required>
+        <input class="form-control mb-2" placeholder="Correo" id="add-correo" type="email" required>
+        <input class="form-control mb-2" placeholder="Teléfono" id="add-telefono" required>
+
+        <!-- Región -->
+        <select class="form-control mb-2" id="add-region" required>
+            <option value="">Seleccione una región</option>
+        </select>
+
+        <!-- Comuna -->
+        <select class="form-control mb-2" id="add-comuna" required>
+            <option value="">Seleccione una comuna</option>
+        </select>
+
+        <!-- Tipo de Usuario -->
+        <select class="form-control mb-2" id="add-tipo" required>
+            <option value="">Seleccione un tipo de usuario</option>
+            <option value="Administrador">Administrador</option>
+            <option value="Cliente">Cliente</option>
+            <option value="Vendedor">Vendedor</option>
+        </select>
+
+        <div class="d-flex justify-content-between mt-3">
+            <a href="GestionUsuarios.html" class="btn btn-secondary">Volver</a>
+            <button class="btn btn-primary" type="submit">Guardar</button>
+        </div>
+        </form>
+    </div>
+    <script src="logGestUsu.js"></script>
+</body>
+</html>

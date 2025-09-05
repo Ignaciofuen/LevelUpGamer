@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Productos</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+ 
+    
+  
+    
+    
+    <link rel="stylesheet" href="style3.css">
+    
+
+</head>
+<body>
+
+    <header id="titulo">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+                    <a class="navbar-brand" href="#">Panel de Administrador</a>
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="adminHome.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="GestionProductos.html">Listado de productos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="GestionUsuarios.html">Listado de usuarios</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="agregar-usuario.html">Reportes y estadística</a>
+                        </li>
+
+                       
+                        
+                    </ul>
+                    <div class="d-flex align-items-center">
+                        <span id="saludoUsuario" class="me-3 text-dark"></span>
+                        <button id="botonCerrarSesion" class="btn btn-danger">Cerrar Sesión</button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+   
+    <div class="encabezado mb-6">
+        <h1 class="text">Gestión de Productos</h1>
+        <a href="AgregarProducto.html" class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded-lg transition-colors shadow-md">
+        Agregar Nuevo Producto
+        </a>
+    </div>
+    
+    <main class="container mx-auto px-4 py-8">
+        <div class="bg-white p-6 rounded-lg shadow-md overflow-x-auto">
+            <table class="min-w-full divide-y divide-gray-200">
+                <thead class="bg-gray-50">
+                    <tr>
+                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">ID</th>
+                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Código</th>
+                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Nombre</th>
+                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Categoría</th>
+                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Stock</th>
+                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Precio</th>
+                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Imagen</th>
+                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="cuerpoTablaProductos" class="bg-white divide-y divide-gray-200">
+                   
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    
+    <div class="modal fade" id="modalEliminar" tabindex="-1" aria-labelledby="modalEliminarLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content rounded-lg shadow-xl">
+                <div class="modal-header bg-gray-100 border-b border-gray-200">
+                    <h5 class="modal-title font-semibold text-gray-800" id="modalEliminarLabel">Confirmar Eliminación</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-6 text-gray-700">
+                    ¿Estás seguro de que deseas eliminar este producto? Esta acción no se puede deshacer.
+                </div>
+                <div class="modal-footer bg-gray-100 border-t border-gray-200">
+                    <button type="button" class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-semibold py-2 px-4 rounded-lg transition-colors" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="bg-red-500 hover:bg-red-600 text-white font-semibold py-2 px-4 rounded-lg transition-colors" id="confirmarEliminar">Eliminar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+  
+    <div class="modal fade" id="modalEditar" tabindex="-1" aria-labelledby="modalEditarLabel" aria-hidden="true">
+        
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content rounded-lg shadow-xl">
+                <div class="modal-header bg-gray-100 border-b border-gray-200">
+                    <h5 class="modal-title font-semibold text-gray-800" id="modalEditarLabel">Editar Producto</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-6">
+                    <form id="form-editar-producto">
+                        <input type="hidden" id="edit-id-producto">
+                        <div class="mb-4">
+                            <label for="edit-codigo" class="block text-sm font-medium text-gray-700">Código</label>
+                            <input type="text" id="edit-codigo" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
+                        </div>
+                        <div class="mb-4">
+                            <label for="edit-nombre" class="block text-sm font-medium text-gray-700">Nombre</label>
+                            <input type="text" id="edit-nombre" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
+                        </div>
+                        <div class="mb-4">
+                            <label for="edit-categoria" class="block text-sm font-medium text-gray-700">Categoría</label>
+                            <input type="text" id="edit-categoria" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
+                        </div>
+                        <div class="mb-4">
+                            <label for="edit-stock" class="block text-sm font-medium text-gray-700">Stock</label>
+                            <input type="number" id="edit-stock" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
+                        </div>
+                        <div class="mb-4">
+                            <label for="edit-precio" class="block text-sm font-medium text-gray-700">Precio</label>
+                            <input type="number" step="0.01" id="edit-precio" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
+                        </div>
+                        <div class="mb-4">
+                            <label for="edit-descripcion" class="block text-sm font-medium text-gray-700">Descripción</label>
+                            <textarea id="edit-descripcion" rows="3" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"></textarea>
+                        </div>
+                        <div class="flex justify-end space-x-2">
+                            <button type="button" class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-semibold py-2 px-4 rounded-lg transition-colors" data-bs-dismiss="modal">Cancelar</button>
+                            <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg transition-colors">Guardar Cambios</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+   
+    <script src="listapro.js">
+        
+    </script>
+</body>
+</html>
