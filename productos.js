@@ -1,8 +1,4 @@
-// =================================================================
-// ARCHIVO: productos.js
-// =================================================================
 
-// 1. ARREGLO DE PRODUCTOS
 const productos = [
     {
         id: "1",
@@ -186,7 +182,7 @@ const productos = [
     }
 ];
 
-// 2. LÓGICA DEL CARRITO
+
 let carrito = [];
 
 function guardarCarritoEnLocalStorage() {

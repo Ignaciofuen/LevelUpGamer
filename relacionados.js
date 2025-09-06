@@ -14,7 +14,7 @@ function mostrarProductosRelacionados(productos) {
     productosAleatorios.forEach(producto => {
         const productCardHTML = `
             <div class="related-product-card">
-                <img class="thumbnail-image" src="${producto.imagen}" alt="${producto.nombre}">
+                <img class="thumbnail-image" src="${producto.imagenes}" alt="${producto.nombre}">
                 <div class="product-info">
                     <p class="product-name">${producto.nombre}</p>
                     <p class="product-price">$${producto.precio.toLocaleString('es-ES')}</p>

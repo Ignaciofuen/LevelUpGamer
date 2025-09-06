@@ -1,6 +1,6 @@
 body{
     margin: 0;
-    background-color: #a39d9d;
+    background-color: #293950;
 }
 
 header{
@@ -72,7 +72,7 @@ header{
 }
 
 
-/* ----- Reset básico ----- */
+
 * {
   margin: 0;
   padding: 0;
@@ -80,13 +80,13 @@ header{
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* ----- Contenedor principal ----- */
+
 .container {
   max-width: 1200px;
   margin: 0 auto;
 }
 
-/* ----- Encabezado ----- */
+
 .flex {
   display: flex;
 }
@@ -110,7 +110,7 @@ header{
 h1 {
   font-size: 1.875rem; 
   font-weight: bold;
-  color: #3d444d;; 
+  color: #c0c4ca;; 
   text-align: center;
   border-bottom:  2px solid #888585;
 }
@@ -213,8 +213,8 @@ tbody tr:hover {
 }
 .modal-header,
 .modal-footer {
-  background-color: #f3f4f6; /* gray-100 */
-  border-color: #e5e7eb; /* gray-200 */
+  background-color: #f3f4f6; 
+  border-color: #e5e7eb; 
 }
 .modal-header {
   padding: 1rem;
@@ -229,7 +229,7 @@ tbody tr:hover {
 }
 .modal-body {
   padding: 1.5rem;
-  color: #374151; /* gray-700 */
+  color: #374151;
 }
 
 /* ----- Formularios ----- */
@@ -244,8 +244,8 @@ textarea {
 }
 input:focus,
 textarea:focus {
-  border-color: #93c5fd; /* indigo-300 */
-  box-shadow: 0 0 0 3px rgba(165, 180, 252, 0.5); /* ring-indigo-200 */
+  border-color: #93c5fd; 
+  box-shadow: 0 0 0 3px rgba(165, 180, 252, 0.5); 
 }
 label {
   font-size: 0.875rem;
@@ -261,3 +261,8 @@ label {
   transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 }
 
+#formularioProducto{
+  background-color: white;
+  padding: 5%;
+  border-radius: 4rem;
+}
